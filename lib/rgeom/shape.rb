@@ -50,6 +50,9 @@ module RGeom
     end
 
       # Add this shape to the register.
+      # TODO: parameter label -- allow code like
+      #         _triangle(:equilateral).rotate(30.d).register(:ABC)
+      #       It would be an error to apply a label if the shape already has one.
     def register
       @@register.store(self.category, self)
          # So Triangle gets stored as :triangle, Segment as :segment, etc.
